@@ -69,7 +69,7 @@ class Labelme2coco():
 
             label = object['label']
             bbox = object['points']
-            seg=[np.asarray(bbox).flatten().tolist()]
+            seg=[np.asarray(bbox).flatten().tolist()][0]
             annotation['id'] = self.ann_id
             annotation['image_id'] = self.img_id
             annotation['category_id'] = int(self.classname_to_id[label])
