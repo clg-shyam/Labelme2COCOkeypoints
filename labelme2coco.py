@@ -75,7 +75,6 @@ class Labelme2coco():
             annotation['category_id'] = int(self.classname_to_id[label])
             annotation['iscrowd'] = 0
             annotation['area'] = 1.0
-            print(seg)
             annotation['segmentation'] = [seg[0],seg[1],
             				  seg[0],seg[2],
             				  seg[3],seg[3],
