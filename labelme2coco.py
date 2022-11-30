@@ -69,16 +69,16 @@ class Labelme2coco():
 
             label = object['label']
             bbox = object['points']
-	       seg=[np.asarray(bbox).flatten().tolist()]
+	    seg=[np.asarray(bbox).flatten().tolist()]
             annotation['id'] = self.ann_id
             annotation['image_id'] = self.img_id
             annotation['category_id'] = int(self.classname_to_id[label])
             annotation['iscrowd'] = 0
             annotation['area'] = 1.0
             annotation['segmentation'] = [seg[0],seg[1],
-            						  seg[0],seg[2],
-            						  seg[3],seg[3],
-            						  seg[2],seg[1]]
+            				  seg[0],seg[2],
+            				  seg[3],seg[3],
+            				  seg[2],seg[1]]
             annotation['bbox'] = self._get_box(bbox)
 
             for keypoint in keypoints_list[i * args.join_num: (i + 1) * args.join_num]:
